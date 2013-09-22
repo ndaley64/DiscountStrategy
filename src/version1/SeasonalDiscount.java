@@ -5,10 +5,20 @@ package version1;
  * @author Nathaniel
  */
 public class SeasonalDiscount implements Discount{
+    private double SeasonalDiscount;
+    
+    public SeasonalDiscount(double discount){
+        setSeasonalDiscount(discount);
+    }
 
+    public void setSeasonalDiscount(double SeasonalDiscount) {
+        // need to write some validation
+        this.SeasonalDiscount = SeasonalDiscount;
+    }
+    
     @Override
     public double getDiscount(double numProducts) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return SeasonalDiscount;
     }
     
 }

@@ -14,8 +14,8 @@ public class PantsClothingProduct extends ClothingProduct{
 
     public PantsClothingProduct(double waistSize, double length, Discount discount, String productID, String name, String description, double cost, String brand) {
         super(discount, productID, name, description, cost, brand);
-        this.setWaistSize(waistSize);
-        this.setLength(length);
+        setWaistSize(waistSize);
+        setLength(length);
     }
 
     public double getWaistSize() {

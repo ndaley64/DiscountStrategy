@@ -19,12 +19,12 @@ public class PremiumCustomer implements Customer{
     private double discount;
 
     public PremiumCustomer(String customerID, String fName, String lName, Date registerDate, Date upgradeDate, double discount) {
-        this.setCustomerID(customerID);
-        this.setFName(fName);
-        this.setLName(lName);
-        this.setRegisterDate(registerDate);
-        this.setUpgradeDate(upgradeDate);
-        this.setDiscount(discount);
+        setCustomerID(customerID);
+        setFName(fName);
+        setLName(lName);
+        setRegisterDate(registerDate);
+        setUpgradeDate(upgradeDate);
+        setDiscount(discount);
     }
 
     @Override

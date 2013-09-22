@@ -17,10 +17,10 @@ public class StandardCustomer implements Customer{
     private Date registerDate;
 
     public StandardCustomer(String customerID, String fName, String lName, Date registerDate) {
-        this.setCustomerID(customerID);
-        this.setFName(fName);
-        this.setLName(lName);
-        this.setRegisterDate(registerDate);
+        setCustomerID(customerID);
+        setFName(fName);
+        setLName(lName);
+        setRegisterDate(registerDate);
     }
 
     @Override

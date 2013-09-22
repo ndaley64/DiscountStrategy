@@ -14,12 +14,12 @@ public class ClothingProduct implements Product{
     private String brand;
 
     public ClothingProduct(Discount discount, String productID, String name, String description, double cost, String brand) {
-        this.setDiscount(discount);
-        this.setProductID(productID);
-        this.setName(name);
-        this.setDescription(description);
-        this.setCost(cost);
-        this.setBrand(brand);
+        setDiscount(discount);
+        setProductID(productID);
+        setName(name);
+        setDescription(description);
+        setCost(cost);
+        setBrand(brand);
     }
 
     public Discount getDiscount() {
@@ -81,6 +81,4 @@ public class ClothingProduct implements Product{
     public double getProductDiscount(double numProducts) {
         return (this.getDiscount().getDiscount(numProducts) * this.getCost());
     }
-    
-    
 }

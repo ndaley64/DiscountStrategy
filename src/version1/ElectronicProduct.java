@@ -15,13 +15,13 @@ public class ElectronicProduct implements Product{
     private int lifeSpanInYears;
 
     public ElectronicProduct(Discount discount, String productID, String name, String description, double cost, String brand, int lifeSpanInYears) {
-        this.setDiscount(discount);
-        this.setProductID(productID);
-        this.setName(name);
-        this.setDescription(description);
-        this.setCost(cost);
-        this.setBrand(brand);
-        this.setLifeSpanInYears(lifeSpanInYears);
+        setDiscount(discount);
+        setProductID(productID);
+        setName(name);
+        setDescription(description);
+        setCost(cost);
+        setBrand(brand);
+        setLifeSpanInYears(lifeSpanInYears);
     }
 
     public Discount getDiscount() {
