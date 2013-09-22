@@ -4,8 +4,6 @@
  */
 package version1;
 
-import java.util.Date;
-
 /**
  *
  * @author Nathaniel
