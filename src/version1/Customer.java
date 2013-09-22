@@ -10,4 +10,5 @@ package version1;
  */
 public interface Customer {
     
+    public abstract String getCustomerID();
 }

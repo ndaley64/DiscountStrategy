@@ -17,4 +17,16 @@ public class ProductDatabase implements Database{
         temp[temp.length-1] = product;
         products = temp;
     }
+    
+    public Product retrieveProduct(String productID){
+        int productIndex = -1;
+        
+        for(int i = 0; i < products.length; i++){
+            if(products[i].getProductID().equals(productID)){
+                productIndex = i;
+            }
+        }
+        
+        return products[productIndex];
+    }
 }

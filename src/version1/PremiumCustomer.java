@@ -27,6 +27,7 @@ public class PremiumCustomer implements Customer{
         this.setDiscount(discount);
     }
 
+    @Override
     public String getCustomerID() {
         return customerID;
     }

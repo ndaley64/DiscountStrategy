@@ -7,13 +7,15 @@ package version1;
 public class ClothingProduct implements Product{
     Discount discount;
     
+    private String productID;
     private String name;
     private String description;
     private double cost;
     private String brand;
 
-    public ClothingProduct(Discount discount, String name, String description, double cost, String brand) {
+    public ClothingProduct(Discount discount, String productID, String name, String description, double cost, String brand) {
         this.setDiscount(discount);
+        this.setProductID(productID);
         this.setName(name);
         this.setDescription(description);
         this.setCost(cost);
@@ -28,7 +30,17 @@ public class ClothingProduct implements Product{
         // need to write some validation
         this.discount = discount;
     }
+    
+    @Override
+    public String getProductID() {
+        return productID;
+    }
 
+    public void setProductID(String productID) {
+        // need to write some validation
+        this.productID = productID;
+    }
+    
     public String getName() {
         return name;
     }

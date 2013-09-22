@@ -17,4 +17,16 @@ public class CustomerDatabase implements Database{
         temp[temp.length-1] = customer;
         customers = temp;
     }
+    
+    public Customer retrieveCustomer(String customerID){
+        int customerIndex = -1;
+        
+        for(int i = 0; i < customers.length; i++){
+            if(customers[i].getCustomerID().equals(customerID)){
+                customerIndex = i;
+            }
+        }
+        
+        return customers[customerIndex];
+    }
 }

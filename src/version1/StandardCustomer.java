@@ -23,6 +23,7 @@ public class StandardCustomer implements Customer{
         this.setRegisterDate(registerDate);
     }
 
+    @Override
     public String getCustomerID() {
         return customerID;
     }

@@ -7,14 +7,16 @@ package version1;
 public class ElectronicProduct implements Product{
     Discount discount;
     
+    private String productID;
     private String name;
     private String description;
     private double cost;
     private String brand;
     private int lifeSpanInYears;
 
-    public ElectronicProduct(Discount discount, String name, String description, double cost, String brand, int lifeSpanInYears) {
+    public ElectronicProduct(Discount discount, String productID, String name, String description, double cost, String brand, int lifeSpanInYears) {
         this.setDiscount(discount);
+        this.setProductID(productID);
         this.setName(name);
         this.setDescription(description);
         this.setCost(cost);
@@ -29,6 +31,16 @@ public class ElectronicProduct implements Product{
     public void setDiscount(Discount discount) {
         // need to write some validation
         this.discount = discount;
+    }
+
+    @Override
+    public String getProductID() {
+        return productID;
+    }
+
+    public void setProductID(String productID) {
+        // need to write some validation
+        this.productID = productID;
     }
 
     public String getName() {
