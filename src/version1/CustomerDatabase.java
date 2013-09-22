@@ -4,16 +4,19 @@
  */
 package version1;
 
+import java.util.Date;
+
 /**
  *
  * @author Nathaniel
  */
 public class CustomerDatabase implements Database{
-    private Customer[] customers = new Customer[1];
+    private Customer[] customers = new Customer[3];
 
-    
     public void addCustomer(Customer customer){
-        System.out.println(customers.length);
-        //customers[customer.length] = customer;
+        Customer[] temp = new Customer[customers.length + 1];
+        System.arraycopy(customers, 0, temp, 0, customers.length);
+        temp[temp.length-1] = customer;
+        customers = temp;
     }
 }
