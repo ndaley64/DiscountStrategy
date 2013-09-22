@@ -13,15 +13,30 @@ public class InStoreLineItem {
     private DataAccess dataAccess;
     
     private int quantity;
-    private int ttlDiscount;
-    private int ttlCost;
+    private double ttlDiscount;
+    private double ttlCost;
     
     public InStoreLineItem(String productID){
-        
+        product = dataAccess.findProduct(productID);
         quantity = 1;
     }
 
     public void increaseQuantity() {
         quantity++;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getTtlDiscount() {
+        ttlDiscount = product.getProductDiscount(quantity);
+        return ttlDiscount;
+    }
+
+    public double getTtlCost() {
+        ttlCost = product.getPrice() * quantity;
+        return ttlCost;
+    }
+    
 }

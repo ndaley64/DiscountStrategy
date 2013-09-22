@@ -5,7 +5,9 @@ package version1;
  * @author Nathaniel
  */
 public interface Product {
-    public String getProductID();
+    public abstract String getProductID();
     
-    public double getProductDiscount(double numProducts);
+    public abstract double getProductDiscount(double numProducts);
+    
+    public abstract double getPrice();
 }

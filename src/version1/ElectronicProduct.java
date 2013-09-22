@@ -10,16 +10,16 @@ public class ElectronicProduct implements Product{
     private String productID;
     private String name;
     private String description;
-    private double cost;
+    private double price;
     private String brand;
     private int lifeSpanInYears;
 
-    public ElectronicProduct(Discount discount, String productID, String name, String description, double cost, String brand, int lifeSpanInYears) {
+    public ElectronicProduct(Discount discount, String productID, String name, String description, double price, String brand, int lifeSpanInYears) {
         setDiscount(discount);
         setProductID(productID);
         setName(name);
         setDescription(description);
-        setCost(cost);
+        setPrice(price);
         setBrand(brand);
         setLifeSpanInYears(lifeSpanInYears);
     }
@@ -61,13 +61,14 @@ public class ElectronicProduct implements Product{
         this.description = description;
     }
 
-    public double getCost() {
-        return cost;
+    @Override
+    public double getPrice() {
+        return price;
     }
 
-    public void setCost(double cost) {
+    public void setPrice(double price) {
         // need to write some validation
-        this.cost = cost;
+        this.price = price;
     }
 
     public String getBrand() {
@@ -86,7 +87,7 @@ public class ElectronicProduct implements Product{
 
     @Override
     public double getProductDiscount(double numProducts) {
-        return (this.getDiscount().getDiscount(numProducts) * this.getCost());
+        return (this.getDiscount().getDiscount(numProducts) * this.getPrice());
     }
     
 }
