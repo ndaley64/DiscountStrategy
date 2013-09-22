@@ -5,7 +5,7 @@ package version1;
  * @author Nathaniel
  */
 public class ClothingProduct implements Product{
-    Discount discount;
+    private Discount discount;
     
     private String productID;
     private String name;
@@ -75,6 +75,11 @@ public class ClothingProduct implements Product{
     public void setBrand(String brand) {
         // need to write some validation
         this.brand = brand;
+    }
+
+    @Override
+    public double getProductDiscount(double numProducts) {
+        return (this.getDiscount().getDiscount(numProducts) * this.getCost());
     }
     
     

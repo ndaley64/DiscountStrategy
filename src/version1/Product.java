@@ -6,4 +6,6 @@ package version1;
  */
 public interface Product {
     public String getProductID();
+    
+    public double getProductDiscount(double numProducts);
 }

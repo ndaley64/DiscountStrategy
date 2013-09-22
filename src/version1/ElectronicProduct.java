@@ -5,7 +5,7 @@ package version1;
  * @author Nathaniel
  */
 public class ElectronicProduct implements Product{
-    Discount discount;
+    private Discount discount;
     
     private String productID;
     private String name;
@@ -82,6 +82,11 @@ public class ElectronicProduct implements Product{
     public void setLifeSpanInYears(int lifeSpanInYears) {
         // need to write some validation
         this.lifeSpanInYears = lifeSpanInYears;
+    }
+
+    @Override
+    public double getProductDiscount(double numProducts) {
+        return (this.getDiscount().getDiscount(numProducts) * this.getCost());
     }
     
 }
