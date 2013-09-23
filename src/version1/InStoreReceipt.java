@@ -19,7 +19,11 @@ public class InStoreReceipt implements Receipt{
 
     @Override
     public void addProduct(String productID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        LineItem lineItem = new InStoreLineItem(productID);
+        LineItem[] temp = new LineItem[lineItems.length + 1];
+        System.arraycopy(lineItems, 0, temp, 0, lineItems.length);
+        temp[temp.length-1] = lineItem;
+        lineItems = temp;
     }
     
 }

@@ -8,7 +8,7 @@ package version1;
  *
  * @author Nathaniel
  */
-public class InStoreLineItem {
+public class InStoreLineItem implements LineItem{
     private Product product;
     private DataAccess dataAccess;
     
@@ -37,6 +37,11 @@ public class InStoreLineItem {
     public double getTtlCost() {
         ttlCost = product.getPrice() * quantity;
         return ttlCost;
+    }
+
+    @Override
+    public void printLineItem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
