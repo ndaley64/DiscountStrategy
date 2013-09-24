@@ -29,19 +29,22 @@ public class InStoreLineItem implements LineItem{
         return quantity;
     }
 
+    @Override
     public double getTtlDiscount() {
         ttlDiscount = product.getProductDiscount(quantity);
         return ttlDiscount;
     }
 
+    @Override
     public double getTtlCost() {
-        ttlCost = product.getPrice() * quantity;
+        ttlCost = product.getProductPrice() * quantity;
         return ttlCost;
     }
 
     @Override
     public void printLineItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(product.getProductID() + " | " + product.getProductName() + " | "
+                + quantity + " | " + ttlCost + " | " + ttlDiscount);
     }
     
 }

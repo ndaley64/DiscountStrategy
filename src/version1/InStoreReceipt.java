@@ -7,6 +7,8 @@ package version1;
 public class InStoreReceipt implements Receipt{
     private DataAccess dataAcess;
     private LineItem[] lineItems;
+    private double totalCost;
+    private double totalDiscount;
 
     public InStoreReceipt(DataAccess dataAcess) {
         this.dataAcess = dataAcess;
@@ -14,7 +16,24 @@ public class InStoreReceipt implements Receipt{
     
     @Override
     public void outputReceipt() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(LineItem i : lineItems){
+            totalCost += i.getTtlCost();
+            totalDiscount += i.getTtlDiscount();
+        }
+        System.out.println("Print receipt...");
+        System.out.println("TARGET");
+        System.out.println("---------------------------------------------------");
+        System.out.println("ID No.  | Name    |Quantity| Price | Discount  " );
+        System.out.println("---------------------------------------------------");
+        for(LineItem i : lineItems){
+            i.printLineItem();
+        }
+        System.out.println("---------------------------------------------------");
+        System.out.println("                                              Total");
+        System.out.print("                                     ");
+        System.out.println(totalCost - totalDiscount);
+        System.out.println("---------------------------------------------------");
+        System.out.println("Thank you for shopping at Target!");
     }
 
     @Override

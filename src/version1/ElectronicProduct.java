@@ -43,7 +43,8 @@ public class ElectronicProduct implements Product{
         this.productID = productID;
     }
 
-    public String getName() {
+    @Override
+    public String getProductName() {
         return name;
     }
 
@@ -62,7 +63,7 @@ public class ElectronicProduct implements Product{
     }
 
     @Override
-    public double getPrice() {
+    public double getProductPrice() {
         return price;
     }
 
@@ -87,7 +88,7 @@ public class ElectronicProduct implements Product{
 
     @Override
     public double getProductDiscount(double numProducts) {
-        return (this.getDiscount().getDiscount(numProducts) * this.getPrice());
+        return (this.getDiscount().getDiscount(numProducts) * this.getProductPrice());
     }
     
 }

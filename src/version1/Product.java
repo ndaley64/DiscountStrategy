@@ -9,5 +9,7 @@ public interface Product {
     
     public abstract double getProductDiscount(double numProducts);
     
-    public abstract double getPrice();
+    public abstract double getProductPrice();
+    
+    public abstract String getProductName();
 }

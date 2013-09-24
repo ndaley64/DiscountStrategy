@@ -7,7 +7,7 @@ public class CashRegister {
     private Receipt receipt;
     private DataAccess dataAccess;
     
-    public CashRegister(GlobalCustomerDatabase cd, StoreProductDatabase pd, DataAccess da){
+    public CashRegister(DataAccess da){
         dataAccess = da;
     }
     
