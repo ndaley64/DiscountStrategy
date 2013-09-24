@@ -10,9 +10,7 @@ public class Startup {
      */
     public static void main(String[] args) {
         //Add multiple seasonal and Quantity discounts
-        Database productDatabase = new StoreProductDatabase();
-        Database customerDatabase = new GlobalCustomerDatabase();
-        
-        //DataAccess dataAccess = new DataAccess(customerDatabase, productDatabase);
+        //Add customers and product to respective databases
+        CashRegister cashRegister = new CashRegister();
     }
 }

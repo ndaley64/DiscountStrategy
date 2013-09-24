@@ -12,9 +12,9 @@ public class DataAccess {
     GlobalCustomerDatabase globalCustomerDatabase;
     StoreProductDatabase storeProductDatabase;
 
-    public DataAccess(GlobalCustomerDatabase customerDatabase, StoreProductDatabase storeProductDatabase) {
-        this.globalCustomerDatabase = customerDatabase;
-        this.storeProductDatabase = storeProductDatabase;
+    public DataAccess() {
+        globalCustomerDatabase = new GlobalCustomerDatabase();
+        storeProductDatabase = new StoreProductDatabase();
     }
     
     public Product findProduct(String productID){

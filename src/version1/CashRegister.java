@@ -5,15 +5,13 @@ package version1;
  */
 public class CashRegister {
     private Receipt receipt;
-    private DataAccess dataAccess;
     
-    public CashRegister(DataAccess da){
-        dataAccess = da;
+    public CashRegister(){
     }
     
     public void startSale(String customerID){
         // need to add some validation here or in DataAccess
-        receipt = new InStoreReceipt(dataAccess);
+        receipt = new InStoreReceipt();
     }
     
     public void inputProduct(String productID){

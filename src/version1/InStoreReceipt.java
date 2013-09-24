@@ -5,13 +5,13 @@ package version1;
  * @author Nathaniel
  */
 public class InStoreReceipt implements Receipt{
-    private DataAccess dataAcess;
+    private DataAccess dataAccess;
     private LineItem[] lineItems;
     private double totalCost;
     private double totalDiscount;
 
-    public InStoreReceipt(DataAccess dataAcess) {
-        this.dataAcess = dataAcess;
+    public InStoreReceipt() {
+       dataAccess = new DataAccess();
     }
     
     @Override
