@@ -17,7 +17,7 @@ public class InStoreLineItem implements LineItem{
     private double ttlCost;
     
     public InStoreLineItem(String productID){
-        dataAccess = new DataAccess();
+        dataAccess = new DatabaseDataAccess();
         product = dataAccess.findProduct(productID);
         quantity = 1;
     }

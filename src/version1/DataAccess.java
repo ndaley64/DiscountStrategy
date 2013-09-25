@@ -6,30 +6,12 @@ package version1;
 
 /**
  *
- * @author Nathaniel
+ * @author ndaley
  */
-public class DataAccess {
-    GlobalCustomerDatabase globalCustomerDatabase;
-    StoreProductDatabase storeProductDatabase;
+public interface DataAccess {
+
+    Customer findCustomer(String customerID);
+
+    Product findProduct(String productID);
     
-    Product product;
-    
-    public DataAccess() {
-        globalCustomerDatabase = new GlobalCustomerDatabase();
-        storeProductDatabase = new StoreProductDatabase();
-    }
-    
-    public Product findProduct(String productID){
-        product = storeProductDatabase.retrieveProduct(productID);
-        
-        if(product == null){
-            System.out.println("Error!");
-        }
-        
-        return storeProductDatabase.retrieveProduct(productID);
-    }
-    
-    public Customer findCustomer(String customerID){
-        return globalCustomerDatabase.retrieveCustomer(customerID);
-    }
 }
