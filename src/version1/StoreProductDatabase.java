@@ -14,7 +14,7 @@ public class StoreProductDatabase implements Database{
     
     public StoreProductDatabase(){
         products = new Product[0];
-        Product product = new ClothingProduct(new FlatRateDiscount(.1), "ABC123", "Blue Levi", "Blue jeans", 12.98, "Levi", ClothingSize.MEDIUM);
+        Product product = new ClothingProduct(new QuantityDiscount(), "ABC123", "Blue Levi", "Blue jeans", 12.98, "Levi", ClothingSize.MEDIUM);
         addProduct(product);
         product = new ElectronicProduct(new FlatRateDiscount(.2), "RAD456", "Rad Blaster", "Red lasor gun", 34.95, "Alkaid", 2);
         addProduct(product);

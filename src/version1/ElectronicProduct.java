@@ -88,7 +88,7 @@ public class ElectronicProduct implements Product{
 
     @Override
     public double getProductDiscount(double numProducts) {
-        return (this.getDiscount().getDiscount(numProducts) * this.getProductPrice());
+        return (this.getDiscount().getDiscount(numProducts));
     }
     
 }

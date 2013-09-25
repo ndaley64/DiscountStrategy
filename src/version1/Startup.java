@@ -17,10 +17,13 @@ public class Startup {
         
         //Product ID's: ABC123, RAD456, NDS1, SHO83
         cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("NDS1");
         cashRegister.inputProduct("ABC123");
         cashRegister.inputProduct("RAD456");
-        cashRegister.inputProduct("NDS1");
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("RAD456");
         cashRegister.inputProduct("SHO83");
+        cashRegister.inputProduct("ABC123");
         
         //output receipt
         cashRegister.finalizeSale();
