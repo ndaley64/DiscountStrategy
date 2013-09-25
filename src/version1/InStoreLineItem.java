@@ -33,12 +33,14 @@ public class InStoreLineItem implements LineItem{
     @Override
     public double getTtlDiscount() {
         ttlDiscount = product.getProductDiscount(quantity);
+        ttlDiscount = (double)Math.round(ttlDiscount * 100) / 100;
         return ttlDiscount;
     }
 
     @Override
     public double getTtlCost() {
         ttlCost = product.getProductPrice() * quantity;
+        ttlCost = (double)Math.round(ttlCost * 100) / 100;
         return ttlCost;
     }
 

@@ -6,8 +6,9 @@ package version1;
  */
 public class InStoreReceipt implements Receipt{
     private LineItem[] lineItems;
-    private double totalCost;
-    private double totalDiscount;
+    private double subTotal = 0;
+    private double total = 0;
+    private double totalDiscount = 0;
 
     public InStoreReceipt() {
        lineItems = new LineItem[0];
@@ -16,21 +17,32 @@ public class InStoreReceipt implements Receipt{
     @Override
     public void outputReceipt() {
         for(LineItem i : lineItems){
-            totalCost += i.getTtlCost();
+            subTotal += i.getTtlCost();
             totalDiscount += i.getTtlDiscount();
+            
         }
+        subTotal = (double)Math.round(subTotal * 100) / 100;
+        totalDiscount = (double)Math.round(totalDiscount * 100) / 100;
+        total = (double)Math.round((subTotal - totalDiscount) * 100) / 100;
+        
         System.out.println("Print receipt...");
         System.out.println("TARGET");
         System.out.println("---------------------------------------------------");
-        System.out.println("ID No.  | Name    |Quantity| Price | Discount  " );
+        System.out.println("ID No.  | Name    |Quantity| SubTotal | Discount  " );
         System.out.println("---------------------------------------------------");
         for(LineItem i : lineItems){
             i.printLineItem();
         }
         System.out.println("---------------------------------------------------");
+        System.out.println("                                           SubTotal");
+        System.out.print("                                             ");
+        System.out.println(subTotal);
+        System.out.println("                                       TotalDiscount");
+        System.out.print("                                              ");
+        System.out.println(totalDiscount);
         System.out.println("                                              Total");
-        System.out.print("                                     ");
-        System.out.println(totalCost - totalDiscount);
+        System.out.print("                                             ");
+        System.out.println(total - totalDiscount);
         System.out.println("---------------------------------------------------");
         System.out.println("Thank you for shopping at Target!");
     }
