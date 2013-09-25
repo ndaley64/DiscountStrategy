@@ -10,7 +10,18 @@ public class Startup {
      */
     public static void main(String[] args) {
         //Add multiple seasonal and Quantity discounts
-        //Add customers and product to respective databases
         CashRegister cashRegister = new CashRegister();
+        
+        //Customer ID's: CBAS1234, JCKA8604, PREM2503
+        cashRegister.startSale("CBAS1234");
+        
+        //Product ID's: ABC123, RAD456, NDS1, SHO83
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("RAD456");
+        cashRegister.inputProduct("NDS1");
+        cashRegister.inputProduct("SHO83");
+        
+        //output receipt
+        cashRegister.finalizeSale();
     }
 }

@@ -16,6 +16,7 @@ public class CashRegister {
     
     public void inputProduct(String productID){
         // need to add some validation here or in DataAccess
+        receipt.addProduct(productID);
     }
     
     public void finalizeSale(){
