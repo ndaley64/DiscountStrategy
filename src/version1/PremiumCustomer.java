@@ -17,14 +17,25 @@ public class PremiumCustomer implements Customer{
     private Date registerDate;
     private Date upgradeDate;
     private double discount;
+    private double tax;
 
-    public PremiumCustomer(String customerID, String fName, String lName, Date registerDate, Date upgradeDate, double discount) {
+    public PremiumCustomer(String customerID, String fName, String lName, Date registerDate, Date upgradeDate, double tax, double discount) {
         setCustomerID(customerID);
         setFName(fName);
         setLName(lName);
         setRegisterDate(registerDate);
         setUpgradeDate(upgradeDate);
+        setTax(tax);
         setDiscount(discount);
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        // need some validation
+        this.tax = tax;
     }
 
     @Override

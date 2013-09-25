@@ -13,7 +13,7 @@ public class Startup {
         CashRegister cashRegister = new CashRegister();
         
         //Customer ID's: CBAS1234, JCKA8604, PREM2503
-        cashRegister.startSale("CBAS1234");
+        cashRegister.startSale("PREM2503");
         
         //Product ID's: ABC123, RAD456, NDS1, SHO83
         cashRegister.inputProduct("ABC123");

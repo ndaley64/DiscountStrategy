@@ -15,8 +15,9 @@ public class StandardCustomer implements Customer{
     private String fName;
     private String lName;
     private Date registerDate;
+    private double tax;
 
-    public StandardCustomer(String customerID, String fName, String lName, Date registerDate) {
+    public StandardCustomer(String customerID, String fName, String lName, Date registerDate, double tax) {
         setCustomerID(customerID);
         setFName(fName);
         setLName(lName);

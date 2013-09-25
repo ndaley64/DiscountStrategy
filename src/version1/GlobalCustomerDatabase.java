@@ -15,11 +15,11 @@ public class GlobalCustomerDatabase implements Database{
     
     public GlobalCustomerDatabase(){
         customers = new Customer[0];
-        Customer customer = new StandardCustomer("CBAS1234", "John", "Doe", new Date());
+        Customer customer = new StandardCustomer("CBAS1234", "John", "Doe", new Date(), .01);
         addCustomer(customer);
-        customer = new StandardCustomer("JCKA8604", "Juniper", "Writher", new Date());
+        customer = new StandardCustomer("JCKA8604", "Juniper", "Writher", new Date(), .01);
         addCustomer(customer);
-        customer = new PremiumCustomer("PREM2503", "George", "Banks", new Date(), new Date(), .05);
+        customer = new PremiumCustomer("PREM2503", "George", "Banks", new Date(), new Date(), .01, .05);
         addCustomer(customer);
     }
     

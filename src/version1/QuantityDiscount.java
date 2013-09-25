@@ -18,7 +18,9 @@ public class QuantityDiscount implements Discount{
     }
 
     public void setQuantityLimit(int quantityLimit) {
-        // need some validation
+        if(quantityLimit < 1){
+            throw new IllegalArgumentException("The quantity limit is too small");
+        }
         this.quantityLimit = quantityLimit;
     }
 
@@ -27,7 +29,10 @@ public class QuantityDiscount implements Discount{
     }
 
     public void setDiscountAmount(double discountAmount) {
-        // need some validation
+        if(discountAmount > 1 || discountAmount < 0){
+            throw new IllegalArgumentException("Illegal discount amount.");
+        }
+        
         this.discountAmount = discountAmount;
     }
     
