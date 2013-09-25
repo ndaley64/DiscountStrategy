@@ -22,6 +22,7 @@ public class InStoreLineItem implements LineItem{
         quantity = 1;
     }
 
+    @Override
     public void increaseQuantity() {
         quantity++;
     }
@@ -48,6 +49,18 @@ public class InStoreLineItem implements LineItem{
     public void printLineItem() {
         System.out.println(product.getProductID() + " | " + product.getProductName() + " | "
                 + quantity + " | " + ttlCost + " | " + ttlDiscount);
+    }
+
+    @Override
+    public boolean checkForDuplicate(String productID) {
+        System.out.println(product.getProductID());
+        
+        if(product.getProductID().equals(productID)){
+            increaseQuantity();
+            return true;
+        }else{
+            return false;
+        }
     }
     
 }

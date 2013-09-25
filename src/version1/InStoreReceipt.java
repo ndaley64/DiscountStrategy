@@ -28,7 +28,7 @@ public class InStoreReceipt implements Receipt{
         System.out.println("Print receipt...");
         System.out.println("TARGET");
         System.out.println("---------------------------------------------------");
-        System.out.println("ID No.  | Name    |Quantity| SubTotal | Discount  " );
+        System.out.println("ID No. | Name        |Quant.| SubTotal | Discount  " );
         System.out.println("---------------------------------------------------");
         for(LineItem i : lineItems){
             i.printLineItem();
@@ -49,11 +49,22 @@ public class InStoreReceipt implements Receipt{
 
     @Override
     public void addProduct(String productID) {
-        LineItem lineItem = new InStoreLineItem(productID);
-        LineItem[] temp = new LineItem[lineItems.length + 1];
-        System.arraycopy(lineItems, 0, temp, 0, lineItems.length);
-        temp[temp.length-1] = lineItem;
-        lineItems = temp;
+        if(!checkForDuplicate(productID)){
+            LineItem lineItem = new InStoreLineItem(productID);
+            LineItem[] temp = new LineItem[lineItems.length + 1];
+            System.arraycopy(lineItems, 0, temp, 0, lineItems.length);
+            temp[temp.length-1] = lineItem;
+            lineItems = temp;
+        }
     }
     
+    public boolean checkForDuplicate(String productID){
+        for(LineItem i : lineItems){
+            if(i.checkForDuplicate(productID)){
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
