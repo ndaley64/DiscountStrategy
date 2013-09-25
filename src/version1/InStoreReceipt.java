@@ -38,7 +38,7 @@ public class InStoreReceipt implements Receipt{
         System.out.print("                                             ");
         System.out.println(subTotal);
         System.out.println("                                       TotalDiscount");
-        System.out.print("                                              ");
+        System.out.print("                                            - ");
         System.out.println(totalDiscount);
         System.out.println("                                              Total");
         System.out.print("                                             ");

@@ -48,7 +48,7 @@ public class InStoreLineItem implements LineItem{
     @Override
     public void printLineItem() {
         System.out.println(product.getProductID() + " | " + product.getProductName() + " | "
-                + quantity + " | " + ttlCost + " | " + ttlDiscount);
+                + quantity + " | $" + ttlCost + " | -$" + ttlDiscount);
     }
 
     @Override
