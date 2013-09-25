@@ -14,13 +14,13 @@ public class StoreProductDatabase implements Database{
     
     public StoreProductDatabase(){
         products = new Product[0];
-        Product product = new PantsClothingProduct(new FlatRateDiscount(.1), "ABC123", "Blue Levi", "Blue jeans", 12.98, "Levi", 22, 22);
+        Product product = new ClothingProduct(new FlatRateDiscount(.1), "ABC123", "Blue Levi", "Blue jeans", 12.98, "Levi", ClothingSize.MEDIUM);
         addProduct(product);
         product = new ElectronicProduct(new FlatRateDiscount(.2), "RAD456", "Rad Blaster", "Red lasor gun", 34.95, "Alkaid", 2);
         addProduct(product);
         product = new ElectronicProduct(new FlatRateDiscount(.2), "NDS1", "Nintendo DS FAT", "Collapsable Portable Game System", 149.99, "Nintendo", 2);
         addProduct(product);
-        product = new PantsClothingProduct(new FlatRateDiscount(.1), "SHO83", "Green shorts", "Green shorts with four pockets in front and two in back", 10.99, "Juniper", 22, 11);
+        product = new ClothingProduct(new FlatRateDiscount(.1), "SHO83", "Green shorts", "Green shorts with four pockets in front and two in back", 10.99, "Juniper", ClothingSize.EXTRA_LARGE);
         addProduct(product);
     }
 

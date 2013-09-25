@@ -12,14 +12,25 @@ public class ClothingProduct implements Product{
     private String description;
     private double price;
     private String brand;
+    private ClothingSize clothingSize;
 
-    public ClothingProduct(Discount discount, String productID, String name, String description, double price, String brand) {
+    public ClothingProduct(Discount discount, String productID, String name, String description, double price, String brand, ClothingSize clothingSize) {
         setDiscount(discount);
         setProductID(productID);
         setName(name);
         setDescription(description);
         setPrice(price);
         setBrand(brand);
+        setClothingSize(clothingSize);
+    }
+
+    public ClothingSize getClothingSize() {
+        return clothingSize;
+    }
+
+    public void setClothingSize(ClothingSize clothingSize) {
+        //Need some validation
+        this.clothingSize = clothingSize;
     }
 
     public Discount getDiscount() {
