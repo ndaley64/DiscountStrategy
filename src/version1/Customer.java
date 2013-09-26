@@ -11,4 +11,8 @@ package version1;
 public interface Customer {
     
     public abstract String getCustomerID();
+    
+    public abstract double getCustomerDiscount();
+    
+    public abstract double getCustomerTax();
 }

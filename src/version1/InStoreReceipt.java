@@ -5,13 +5,20 @@ package version1;
  * @author Nathaniel
  */
 public class InStoreReceipt implements Receipt{
+    private DataAccess dataAccess;
+    private Customer customer;
     private LineItem[] lineItems;
-    private double subTotal = 0;
-    private double total = 0;
-    private double totalDiscount = 0;
+    private double subTotal;
+    private double customerDiscount;
+    private double customerTax;
+    private double total;
+    private double totalDiscount ;
+    private double totalWithDiscountAndTax;
 
-    public InStoreReceipt() {
+    public InStoreReceipt(String customerID) {
        lineItems = new LineItem[0];
+       dataAccess = new DatabaseDataAccess();
+       customer = dataAccess.findCustomer(customerID);
     }
     
     @Override
@@ -21,9 +28,15 @@ public class InStoreReceipt implements Receipt{
             totalDiscount += i.getTtlDiscount();
             
         }
+        
+        //Calculate all totals necessary for receipt
         subTotal = (double)Math.round(subTotal * 100) / 100;
         totalDiscount = (double)Math.round(totalDiscount * 100) / 100;
         total = (double)Math.round((subTotal - totalDiscount) * 100) / 100;
+        customerDiscount = customer.getCustomerDiscount() * subTotal;
+        customerTax = (double)Math.round(((subTotal - (customer.getCustomerDiscount() * subTotal)) * customer.getCustomerTax() ) * 100) / 100;
+        totalWithDiscountAndTax = (double)Math.round((total - totalDiscount - customerDiscount + customerTax) * 100) / 100;
+        
         
         System.out.println("Print receipt...");
         System.out.println("TARGET");
@@ -37,12 +50,18 @@ public class InStoreReceipt implements Receipt{
         System.out.println("                                           SubTotal");
         System.out.print("                                             ");
         System.out.println(subTotal);
-        System.out.println("                                       TotalDiscount");
-        System.out.print("                                            - ");
+        System.out.println("                               TotalProductDiscount");
+        System.out.print("                                           - ");
         System.out.println(totalDiscount);
+        System.out.println("                                   CustomerDiscount");
+        System.out.print("                                           - ");
+        System.out.println(customerDiscount);
+        System.out.println("                                                Tax");
+        System.out.print("                                             ");
+        System.out.println(customerTax);
         System.out.println("                                              Total");
         System.out.print("                                             ");
-        System.out.println(total - totalDiscount);
+        System.out.println(totalWithDiscountAndTax);
         System.out.println("---------------------------------------------------");
         System.out.println("Thank you for shopping at Target!");
     }

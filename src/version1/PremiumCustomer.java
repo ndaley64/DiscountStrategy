@@ -29,7 +29,8 @@ public class PremiumCustomer implements Customer{
         setDiscount(discount);
     }
 
-    public double getTax() {
+    @Override
+    public double getCustomerTax() {
         return tax;
     }
 
@@ -84,7 +85,8 @@ public class PremiumCustomer implements Customer{
         this.upgradeDate = upgradeDate;
     }
 
-    public double getDiscount() {
+    @Override
+    public double getCustomerDiscount() {
         return discount;
     }
 
