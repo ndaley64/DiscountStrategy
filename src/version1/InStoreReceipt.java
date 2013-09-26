@@ -11,7 +11,6 @@ public class InStoreReceipt implements Receipt{
     private double subTotal;
     private double customerDiscount;
     private double customerTax;
-    private double total;
     private double totalDiscount ;
     private double totalWithDiscountAndTax;
 
@@ -32,10 +31,9 @@ public class InStoreReceipt implements Receipt{
         //Calculate all totals necessary for receipt
         subTotal = (double)Math.round(subTotal * 100) / 100;
         totalDiscount = (double)Math.round(totalDiscount * 100) / 100;
-        total = (double)Math.round((subTotal - totalDiscount) * 100) / 100;
-        customerDiscount = customer.getCustomerDiscount() * subTotal;
+        customerDiscount = (double)Math.round((customer.getCustomerDiscount() * (subTotal - totalDiscount)) * 100) / 100;
         customerTax = (double)Math.round(((subTotal - (customer.getCustomerDiscount() * subTotal)) * customer.getCustomerTax() ) * 100) / 100;
-        totalWithDiscountAndTax = (double)Math.round((total - totalDiscount - customerDiscount + customerTax) * 100) / 100;
+        totalWithDiscountAndTax = (double)Math.round((subTotal - totalDiscount - customerDiscount + customerTax) * 100) / 100;
         
         
         System.out.println("Print receipt...");

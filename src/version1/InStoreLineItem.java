@@ -53,8 +53,6 @@ public class InStoreLineItem implements LineItem{
 
     @Override
     public boolean checkForDuplicate(String productID) {
-        System.out.println(product.getProductID());
-        
         if(product.getProductID().equals(productID)){
             increaseQuantity();
             return true;
