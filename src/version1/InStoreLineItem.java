@@ -9,6 +9,18 @@ package version1;
  * @author Nathaniel
  */
 public class InStoreLineItem implements LineItem{
+    private final int ID_COL_LENGTH = 7;
+    private final int NAME_COL_LENGTH = 15;
+    private final int QUANTITY_COL_LENGTH = 6;
+    private final int SUBTOTAL_COL_LENGTH = 10;
+    private final int DISCOUNT_COL_LENGTH = 9;
+    
+    private int idColSpacing;
+    private int nameColSpacing;
+    private int quantityColSpacing;
+    private int subtotalColSpacing;
+    private int discountColSpacing;
+    
     private Product product;
     private DataAccess dataAccess;
     
@@ -47,8 +59,28 @@ public class InStoreLineItem implements LineItem{
 
     @Override
     public void printLineItem() {
-        System.out.println(product.getProductID() + " | " + product.getProductName() + " | "
-                + quantity + " | $" + ttlCost + " | -$" + ttlDiscount);
+        idColSpacing = ID_COL_LENGTH - product.getProductID().length();
+        nameColSpacing = NAME_COL_LENGTH - product.getProductName().length();
+        
+        System.out.print(product.getProductID());
+        for(int i = 0; i < idColSpacing; i++){
+            System.out.print(" ");
+        }
+        System.out.print("|");
+        System.out.print(product.getProductName());
+        for(int i = 0; i < nameColSpacing; i++){
+            System.out.print(" ");
+        }
+        System.out.print("|");
+        
+        if(quantity < 10){
+            System.out.print("  ");
+            System.out.print(quantity);
+            System.out.print("   |$");
+        }
+        System.out.print(ttlCost);
+        System.out.print("| -$");
+        System.out.println(ttlDiscount);
     }
 
     @Override

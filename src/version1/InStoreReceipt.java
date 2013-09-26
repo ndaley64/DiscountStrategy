@@ -25,7 +25,6 @@ public class InStoreReceipt implements Receipt{
         for(LineItem i : lineItems){
             subTotal += i.getTtlCost();
             totalDiscount += i.getTtlDiscount();
-            
         }
         
         //Calculate all totals necessary for receipt
@@ -35,11 +34,10 @@ public class InStoreReceipt implements Receipt{
         customerTax = (double)Math.round(((subTotal - (customer.getCustomerDiscount() * subTotal)) * customer.getCustomerTax() ) * 100) / 100;
         totalWithDiscountAndTax = (double)Math.round((subTotal - totalDiscount - customerDiscount + customerTax) * 100) / 100;
         
-        
         System.out.println("Print receipt...");
         System.out.println("TARGET");
         System.out.println("---------------------------------------------------");
-        System.out.println("ID No. | Name        |Quant.| SubTotal | Discount  " );
+        System.out.println("ID No. | Name          |Quant.| SubTotal | Discount" );
         System.out.println("---------------------------------------------------");
         for(LineItem i : lineItems){
             i.printLineItem();

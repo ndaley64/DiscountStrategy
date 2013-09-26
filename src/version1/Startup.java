@@ -10,6 +10,9 @@ public class Startup {
      */
     public static void main(String[] args) {
         //Add multiple seasonal and Quantity discounts
+        //Finish receipt formatting
+        
+        
         CashRegister cashRegister = new CashRegister();
         
         //Customer ID's: CBAS1234, JCKA8604, PREM2503
