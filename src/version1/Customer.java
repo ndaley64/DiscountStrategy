@@ -10,9 +10,21 @@ package version1;
  */
 public interface Customer {
     
+    /**
+     *
+     * @return
+     */
     public abstract String getCustomerID();
     
+    /**
+     *
+     * @return
+     */
     public abstract double getCustomerDiscount();
     
+    /**
+     *
+     * @return
+     */
     public abstract double getCustomerTax();
 }

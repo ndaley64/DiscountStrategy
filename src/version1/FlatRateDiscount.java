@@ -7,17 +7,30 @@ package version1;
 public class FlatRateDiscount implements Discount{
     private double flatRateDiscount;
     
-    public FlatRateDiscount(double discount){
+    /**
+     *
+     * @param discount
+     */
+    public FlatRateDiscount(final double discount){
         setFlatRateDiscount(discount);
     }
 
-    public void setFlatRateDiscount(double flatRateDiscount) {
+    /**
+     *
+     * @param flatRateDiscount
+     */
+    public void setFlatRateDiscount(final double flatRateDiscount) {
         // need to write some validation
         this.flatRateDiscount = flatRateDiscount;
     }
     
+    /**
+     * 
+     * @param numProducts
+     * @return 
+     */
     @Override
-    public double getDiscount(double numProducts) {
+    public double getDiscount(final double numProducts) {
          return flatRateDiscount;
     }
     

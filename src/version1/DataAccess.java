@@ -10,8 +10,18 @@ package version1;
  */
 public interface DataAccess {
 
-    Customer findCustomer(String customerID);
+    /**
+     *
+     * @param customerID
+     * @return
+     */
+    Customer findCustomer(final String customerID);
 
-    Product findProduct(String productID);
+    /**
+     *
+     * @param productID
+     * @return
+     */
+    Product findProduct(final String productID);
     
 }

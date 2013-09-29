@@ -32,21 +32,36 @@ public class InStoreLineItem implements LineItem{
     private double ttlDiscount;
     private double ttlCost;
     
-    public InStoreLineItem(String productID){
+    /**
+     *
+     * @param productID
+     */
+    public InStoreLineItem(final String productID){
         dataAccess = new DatabaseDataAccess();
         product = dataAccess.findProduct(productID);
         quantity = QUANTITY_INITIALIZER;
     }
 
+    /**
+     *
+     */
     @Override
     public void increaseQuantity() {
         quantity++;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getQuantity() {
         return quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double getTtlDiscount() {
         ttlDiscount = product.getProductDiscount(quantity) * getTtlCost();
@@ -54,6 +69,10 @@ public class InStoreLineItem implements LineItem{
         return ttlDiscount;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double getTtlCost() {
         ttlCost = product.getProductPrice() * quantity;
@@ -61,6 +80,9 @@ public class InStoreLineItem implements LineItem{
         return ttlCost;
     }
 
+    /**
+     *
+     */
     @Override
     public void printLineItem() {
         idColSpacing = ID_COL_LENGTH - product.getProductID().length();
@@ -97,8 +119,13 @@ public class InStoreLineItem implements LineItem{
         System.out.println("$" + ttlDiscount);
     }
 
+    /**
+     *
+     * @param productID
+     * @return
+     */
     @Override
-    public boolean checkForDuplicate(String productID) {
+    public boolean checkForDuplicate(final String productID) {
         if(product.getProductID().equals(productID)){
             increaseQuantity();
             return true;

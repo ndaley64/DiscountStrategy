@@ -7,8 +7,13 @@ package version1;
 public class NonDiscount implements Discount{
     private final double NO_DISCOUNT = 0;
     
+    /**
+     * 
+     * @param numProducts
+     * @return 
+     */
     @Override
-    public double getDiscount(double numProducts) {
+    public double getDiscount(final double numProducts) {
         return NO_DISCOUNT;
     }
     

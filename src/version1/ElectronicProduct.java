@@ -14,7 +14,18 @@ public class ElectronicProduct implements Product{
     private String brand;
     private int lifeSpanInYears;
 
-    public ElectronicProduct(Discount discount, String productID, String name, String description, double price, String brand, int lifeSpanInYears) {
+    /**
+     *
+     * @param discount
+     * @param productID
+     * @param name
+     * @param description
+     * @param price
+     * @param brand
+     * @param lifeSpanInYears
+     */
+    public ElectronicProduct(final Discount discount, final String productID, final String name, 
+                            final String description, final double price, final String brand, final int lifeSpanInYears) {
         setDiscount(discount);
         setProductID(productID);
         setName(name);
@@ -24,70 +35,127 @@ public class ElectronicProduct implements Product{
         setLifeSpanInYears(lifeSpanInYears);
     }
 
+    /**
+     *
+     * @return
+     */
     public Discount getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Discount discount) {
+    /**
+     *
+     * @param discount
+     */
+    public void setDiscount(final Discount discount) {
         // need to write some validation
         this.discount = discount;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProductID() {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    /**
+     *
+     * @param productID
+     */
+    public void setProductID(final String productID) {
         // need to write some validation
         this.productID = productID;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getProductName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     *
+     * @param name
+     */
+    public void setName(final String name) {
         // need to write some validation
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    /**
+     *
+     * @param description
+     */
+    public void setDescription(final String description) {
         // need to write some validation
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double getProductPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    /**
+     *
+     * @param price
+     */
+    public void setPrice(final double price) {
         // need to write some validation
         this.price = price;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    /**
+     *
+     * @param brand
+     */
+    public void setBrand(final String brand) {
         // need to write some validation
         this.brand = brand;
     }
 
-    public void setLifeSpanInYears(int lifeSpanInYears) {
+    /**
+     *
+     * @param lifeSpanInYears
+     */
+    public void setLifeSpanInYears(final int lifeSpanInYears) {
         // need to write some validation
         this.lifeSpanInYears = lifeSpanInYears;
     }
 
+    /**
+     *
+     * @param numProducts
+     * @return
+     */
     @Override
-    public double getProductDiscount(double numProducts) {
+    public double getProductDiscount(final double numProducts) {
         return (this.getDiscount().getDiscount(numProducts));
     }
     

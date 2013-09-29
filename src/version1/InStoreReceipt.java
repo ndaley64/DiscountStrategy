@@ -18,12 +18,19 @@ public class InStoreReceipt implements Receipt{
     private final int NEGATIVE_DISPLACEMENT = 2;
     private final int MONEY_ROUNDING = 100;
 
-    public InStoreReceipt(String customerID) {
+    /**
+     *
+     * @param customerID
+     */
+    public InStoreReceipt(final String customerID) {
        lineItems = new LineItem[0];
        dataAccess = new DatabaseDataAccess();
        customer = dataAccess.findCustomer(customerID);
     }
     
+    /**
+     *
+     */
     @Override
     public void outputReceipt() {
         for(LineItem i : lineItems){
@@ -76,8 +83,12 @@ public class InStoreReceipt implements Receipt{
         System.out.println("Thank you for shopping at Target!");
     }
 
+    /**
+     *
+     * @param productID
+     */
     @Override
-    public void addProduct(String productID) {
+    public void addProduct(final String productID) {
         if(!checkForDuplicate(productID)){
             LineItem lineItem = new InStoreLineItem(productID);
             LineItem[] temp = new LineItem[lineItems.length + 1];
@@ -87,7 +98,12 @@ public class InStoreReceipt implements Receipt{
         }
     }
     
-    public boolean checkForDuplicate(String productID){
+    /**
+     *
+     * @param productID
+     * @return
+     */
+    public boolean checkForDuplicate(final String productID){
         for(LineItem i : lineItems){
             if(i.checkForDuplicate(productID)){
                 return true;

@@ -20,7 +20,16 @@ public class StandardCustomer implements Customer{
     private double tax;
     private double discount;
 
-    public StandardCustomer(String customerID, String fName, String lName, Date registerDate, double tax) {
+    /**
+     *
+     * @param customerID
+     * @param fName
+     * @param lName
+     * @param registerDate
+     * @param tax
+     */
+    public StandardCustomer(final String customerID, final String fName, final String lName, 
+                            final Date registerDate, final double tax) {
         setCustomerID(customerID);
         setFName(fName);
         setLName(lName);
@@ -28,59 +37,107 @@ public class StandardCustomer implements Customer{
         setTax(tax);
         setDiscount(NO_DISCOUNT);
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     @Override
     public String getCustomerID() {
         return customerID;
     }
 
+    /**
+     *
+     * @param customerID
+     */
     public void setCustomerID(String customerID) {
         // need to write some validation
         this.customerID = customerID;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFName() {
         return fName;
     }
 
+    /**
+     *
+     * @param fName
+     */
     public void setFName(String fName) {
         // need to write some validation
         this.fName = fName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLName() {
         return lName;
     }
 
+    /**
+     *
+     * @param lName
+     */
     public void setLName(String lName) {
         // need to write some validation
         this.lName = lName;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getRegisterDate() {
         return registerDate;
     }
 
+    /**
+     *
+     * @param registerDate
+     */
     public void setRegisterDate(Date registerDate) {
         // need to write some validation
         this.registerDate = registerDate;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     @Override
     public double getCustomerTax() {
         return tax;
     }
 
+    /**
+     *
+     * @param tax
+     */
     public void setTax(double tax) {
         // need some validation
         this.tax = tax;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     @Override
     public double getCustomerDiscount() {
         return discount;
     }
 
+    /**
+     *
+     * @param discount
+     */
     public void setDiscount(double discount) {
         //need some validation
         this.discount = discount;

@@ -12,6 +12,9 @@ public class StoreProductDatabase implements Database{
     private final int ARRAY_START = 0;
     private Product[] products;
     
+    /**
+     *
+     */
     public StoreProductDatabase(){
         products = new Product[0];
         Product product = new ClothingProduct(new QuantityDiscount(3, .25), "ABC123", "Blue Levi", "Blue jeans", 12.98, "Levi", ClothingSize.MEDIUM);
@@ -24,14 +27,23 @@ public class StoreProductDatabase implements Database{
         addProduct(product);
     }
 
-    public void addProduct(Product product){
+    /**
+     *
+     * @param product
+     */
+    public void addProduct(final Product product){
         Product[] temp = new Product[products.length + 1];
         System.arraycopy(products, ARRAY_START, temp, ARRAY_START, products.length);
         temp[temp.length-1] = product;
         products = temp;
     }
     
-    public Product retrieveProduct(String productID){
+    /**
+     *
+     * @param productID
+     * @return
+     */
+    public Product retrieveProduct(final String productID){
         int productIndex = -1;
         
         for(int i = 0; i < products.length; i++){

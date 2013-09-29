@@ -11,14 +11,23 @@ package version1;
 public class ProductDatabase implements Database{
     private Product[] products;
 
-    public void addProduct(Product product){
+    /**
+     *
+     * @param product
+     */
+    public void addProduct(final Product product){
         Product[] temp = new Product[products.length + 1];
         System.arraycopy(products, 0, temp, 0, products.length);
         temp[temp.length-1] = product;
         products = temp;
     }
     
-    public Product retrieveProduct(String productID){
+    /**
+     *
+     * @param productID
+     * @return
+     */
+    public Product retrieveProduct(final String productID){
         int productIndex = -1;
         
         for(int i = 0; i < products.length; i++){

@@ -4,5 +4,10 @@ package version1;
  * @author Nathaniel
  */
 public interface Discount {
-    public abstract double getDiscount(double numProducts);
+    /**
+     *
+     * @param numProducts
+     * @return
+     */
+    public abstract double getDiscount(final double numProducts);
 }

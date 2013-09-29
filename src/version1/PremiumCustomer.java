@@ -19,7 +19,18 @@ public class PremiumCustomer implements Customer{
     private double discount;
     private double tax;
 
-    public PremiumCustomer(String customerID, String fName, String lName, Date registerDate, Date upgradeDate, double tax, double discount) {
+    /**
+     *
+     * @param customerID
+     * @param fName
+     * @param lName
+     * @param registerDate
+     * @param upgradeDate
+     * @param tax
+     * @param discount
+     */
+    public PremiumCustomer(final String customerID, final String fName, final String lName, 
+                           final Date registerDate, final Date upgradeDate, final double tax, final double discount) {
         setCustomerID(customerID);
         setFName(fName);
         setLName(lName);
@@ -29,68 +40,124 @@ public class PremiumCustomer implements Customer{
         setDiscount(discount);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double getCustomerTax() {
         return tax;
     }
 
-    public void setTax(double tax) {
+    /**
+     *
+     * @param tax
+     */
+    public void setTax(final double tax) {
         // need some validation
         this.tax = tax;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(String customerID) {
+    /**
+     *
+     * @param customerID
+     */
+    public void setCustomerID(final String customerID) {
         // need to write some validation
         this.customerID = customerID;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFName() {
         return fName;
     }
 
-    public void setFName(String fName) {
+    /**
+     *
+     * @param fName
+     */
+    public void setFName(final String fName) {
         // need to write some validation
         this.fName = fName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLName() {
         return lName;
     }
 
-    public void setLName(String lName) {
+    /**
+     *
+     * @param lName
+     */
+    public void setLName(final String lName) {
         // need to write some validation
         this.lName = lName;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getRegisterDate() {
         return registerDate;
     }
 
-    public void setRegisterDate(Date registerDate) {
+    /**
+     *
+     * @param registerDate
+     */
+    public void setRegisterDate(final Date registerDate) {
         // need to write some validation
         this.registerDate = registerDate;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getUpgradeDate() {
         return upgradeDate;
     }
 
-    public void setUpgradeDate(Date upgradeDate) {
+    /**
+     *
+     * @param upgradeDate
+     */
+    public void setUpgradeDate(final Date upgradeDate) {
         // need to set validation
         this.upgradeDate = upgradeDate;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double getCustomerDiscount() {
         return discount;
     }
 
-    public void setDiscount(double discount) {
+    /**
+     *
+     * @param discount
+     */
+    public void setDiscount(final double discount) {
         // need to set validation
         this.discount = discount;
     }

@@ -12,18 +12,31 @@ public class DatabaseDataAccess implements DataAccess {
     GlobalCustomerDatabase globalCustomerDatabase;
     StoreProductDatabase storeProductDatabase;
     
+    /**
+     *
+     */
     public DatabaseDataAccess() {
         globalCustomerDatabase = new GlobalCustomerDatabase();
         storeProductDatabase = new StoreProductDatabase();
     }
     
+    /**
+     * 
+     * @param productID
+     * @return 
+     */
     @Override
-    public Product findProduct(String productID){
+    public Product findProduct(final String productID){
         return storeProductDatabase.retrieveProduct(productID);
     }
     
+    /**
+     * 
+     * @param customerID
+     * @return 
+     */
     @Override
-    public Customer findCustomer(String customerID){
+    public Customer findCustomer(final String customerID){
         return globalCustomerDatabase.retrieveCustomer(customerID);
     }
 }

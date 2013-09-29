@@ -7,17 +7,30 @@ package version1;
 public class SeasonalDiscount implements Discount{
     private double SeasonalDiscount;
     
-    public SeasonalDiscount(double discount){
+    /**
+     *
+     * @param discount
+     */
+    public SeasonalDiscount(final double discount){
         setSeasonalDiscount(discount);
     }
 
-    public void setSeasonalDiscount(double SeasonalDiscount) {
+    /**
+     *
+     * @param SeasonalDiscount
+     */
+    public void setSeasonalDiscount(final double SeasonalDiscount) {
         // need to write some validation
         this.SeasonalDiscount = SeasonalDiscount;
     }
     
+    /**
+     * 
+     * @param numProducts
+     * @return 
+     */
     @Override
-    public double getDiscount(double numProducts) {
+    public double getDiscount(final double numProducts) {
          return SeasonalDiscount;
     }
     

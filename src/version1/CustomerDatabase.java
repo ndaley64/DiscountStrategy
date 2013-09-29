@@ -11,14 +11,23 @@ package version1;
 public class CustomerDatabase implements Database{
     private Customer[] customers = new Customer[3];
 
-    public void addCustomer(Customer customer){
+    /**
+     *
+     * @param customer
+     */
+    public void addCustomer(final Customer customer){
         Customer[] temp = new Customer[customers.length + 1];
         System.arraycopy(customers, 0, temp, 0, customers.length);
         temp[temp.length-1] = customer;
         customers = temp;
     }
     
-    public Customer retrieveCustomer(String customerID){
+    /**
+     *
+     * @param customerID
+     * @return
+     */
+    public Customer retrieveCustomer(final String customerID){
         int customerIndex = -1;
         
         for(int i = 0; i < customers.length; i++){

@@ -6,19 +6,33 @@ package version1;
 public class CashRegister {
     private Receipt receipt;
     
+    /**
+     *
+     */
     public CashRegister(){
     }
     
-    public void startSale(String customerID){
+    /**
+     *
+     * @param customerID
+     */
+    public void startSale(final String customerID){
         // need to add some validation here or in DataAccess
         receipt = new InStoreReceipt(customerID);
     }
     
-    public void inputProduct(String productID){
+    /**
+     *
+     * @param productID
+     */
+    public void inputProduct(final String productID){
         // need to add some validation here or in DataAccess
         receipt.addProduct(productID);
     }
     
+    /**
+     *
+     */
     public void finalizeSale(){
         receipt.outputReceipt();
     }

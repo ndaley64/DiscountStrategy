@@ -13,6 +13,9 @@ import java.util.Date;
 public class GlobalCustomerDatabase implements Database{
     private Customer[] customers;
     
+    /**
+     *
+     */
     public GlobalCustomerDatabase(){
         customers = new Customer[0];
         Customer customer = new StandardCustomer("CBAS1234", "John", "Doe", new Date(), .01);
@@ -23,14 +26,23 @@ public class GlobalCustomerDatabase implements Database{
         addCustomer(customer);
     }
     
-    public void addCustomer(Customer customer){
+    /**
+     *
+     * @param customer
+     */
+    public void addCustomer(final Customer customer){
         Customer[] temp = new Customer[customers.length + 1];
         System.arraycopy(customers, 0, temp, 0, customers.length);
         temp[temp.length-1] = customer;
         customers = temp;
     }
     
-    public Customer retrieveCustomer(String customerID){
+    /**
+     *
+     * @param customerID
+     * @return
+     */
+    public Customer retrieveCustomer(final String customerID){
         int customerIndex = -1;
         
         for(int i = 0; i < customers.length; i++){
