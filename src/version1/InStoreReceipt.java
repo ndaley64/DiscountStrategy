@@ -13,6 +13,10 @@ public class InStoreReceipt implements Receipt{
     private double customerTax;
     private double totalDiscount ;
     private double totalWithDiscountAndTax;
+    
+    private final int PRINTING_COL_LENGTH = 51;
+    private final int NEGATIVE_DISPLACEMENT = 2;
+    private final int MONEY_ROUNDING = 100;
 
     public InStoreReceipt(String customerID) {
        lineItems = new LineItem[0];
@@ -28,11 +32,11 @@ public class InStoreReceipt implements Receipt{
         }
         
         //Calculate all totals necessary for receipt
-        subTotal = (double)Math.round(subTotal * 100) / 100;
-        totalDiscount = (double)Math.round(totalDiscount * 100) / 100;
-        customerDiscount = (double)Math.round((customer.getCustomerDiscount() * (subTotal - totalDiscount)) * 100) / 100;
-        customerTax = (double)Math.round(((subTotal - (customer.getCustomerDiscount() * subTotal)) * customer.getCustomerTax() ) * 100) / 100;
-        totalWithDiscountAndTax = (double)Math.round((subTotal - totalDiscount - customerDiscount + customerTax) * 100) / 100;
+        subTotal = (double)Math.round(subTotal * MONEY_ROUNDING) / MONEY_ROUNDING;
+        totalDiscount = (double)Math.round(totalDiscount * MONEY_ROUNDING) / MONEY_ROUNDING;
+        customerDiscount = (double)Math.round((customer.getCustomerDiscount() * (subTotal - totalDiscount)) * MONEY_ROUNDING) / MONEY_ROUNDING;
+        customerTax = (double)Math.round(((subTotal - (customer.getCustomerDiscount() * subTotal)) * customer.getCustomerTax() ) * MONEY_ROUNDING) / MONEY_ROUNDING;
+        totalWithDiscountAndTax = (double)Math.round((subTotal - totalDiscount - customerDiscount + customerTax) * MONEY_ROUNDING) / MONEY_ROUNDING;
         
         System.out.println("Print receipt...");
         System.out.println("TARGET");
@@ -44,19 +48,29 @@ public class InStoreReceipt implements Receipt{
         }
         System.out.println("---------------------------------------------------");
         System.out.println("                                           SubTotal");
-        System.out.print("                                             ");
+        for(int i = 0; i < PRINTING_COL_LENGTH - Double.toString(subTotal).length(); i++){
+            System.out.print(" ");
+        }
         System.out.println(subTotal);
         System.out.println("                               TotalProductDiscount");
-        System.out.print("                                           - ");
-        System.out.println(totalDiscount);
+        for(int i = 0; i < PRINTING_COL_LENGTH - Double.toString(totalDiscount).length() - NEGATIVE_DISPLACEMENT; i++){
+            System.out.print(" ");
+        }
+        System.out.println("- " + totalDiscount);
         System.out.println("                                   CustomerDiscount");
-        System.out.print("                                           - ");
-        System.out.println(customerDiscount);
+        for(int i = 0; i < PRINTING_COL_LENGTH - Double.toString(customerDiscount).length() - NEGATIVE_DISPLACEMENT; i++){
+            System.out.print(" ");
+        }
+        System.out.println("- " + customerDiscount);
         System.out.println("                                                Tax");
-        System.out.print("                                             ");
+        for(int i = 0; i < PRINTING_COL_LENGTH - Double.toString(customerTax).length(); i++){
+            System.out.print(" ");
+        }
         System.out.println(customerTax);
         System.out.println("                                              Total");
-        System.out.print("                                             ");
+        for(int i = 0; i < PRINTING_COL_LENGTH - Double.toString(totalWithDiscountAndTax).length(); i++){
+            System.out.print(" ");
+        }
         System.out.println(totalWithDiscountAndTax);
         System.out.println("---------------------------------------------------");
         System.out.println("Thank you for shopping at Target!");

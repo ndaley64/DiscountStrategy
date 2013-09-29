@@ -27,6 +27,12 @@ public class Startup {
         cashRegister.inputProduct("RAD456");
         cashRegister.inputProduct("SHO83");
         cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("ABC123");
+        cashRegister.inputProduct("ABC123");
         
         //output receipt
         cashRegister.finalizeSale();
