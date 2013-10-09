@@ -1,5 +1,9 @@
 package version1;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author Nathaniel
@@ -17,6 +21,9 @@ public class InStoreReceipt implements Receipt{
     private final int PRINTING_COL_LENGTH = 51;
     private final int NEGATIVE_DISPLACEMENT = 2;
     private final int MONEY_ROUNDING = 100;
+    
+    private Calendar c = Calendar.getInstance();
+    private Date d = new Date();
 
     /**
      *
@@ -33,6 +40,10 @@ public class InStoreReceipt implements Receipt{
      */
     @Override
     public void outputReceipt() {
+        String format = "MM/dd/yyyy hh:mm a";
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        d = c.getTime();
+        
         for(LineItem i : lineItems){
             subTotal += i.getTtlCost();
             totalDiscount += i.getTtlDiscount();
@@ -81,6 +92,7 @@ public class InStoreReceipt implements Receipt{
         System.out.println(totalWithDiscountAndTax);
         System.out.println("---------------------------------------------------");
         System.out.println("Thank you for shopping at Target!");
+        System.out.println(sdf.format(d));
     }
 
     /**
