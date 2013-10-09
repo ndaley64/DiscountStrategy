@@ -3,6 +3,7 @@ package version1;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import nathaniel.daley.date.util.DateUtilities;
 
 /**
  *
@@ -92,7 +93,7 @@ public class InStoreReceipt implements Receipt{
         System.out.println(totalWithDiscountAndTax);
         System.out.println("---------------------------------------------------");
         System.out.println("Thank you for shopping at Target!");
-        System.out.println(sdf.format(d));
+        System.out.println(DateUtilities.dateToDateTimeStandardAsString(d));
     }
 
     /**
