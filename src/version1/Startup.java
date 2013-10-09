@@ -13,7 +13,7 @@ public class Startup {
         //Finish receipt formatting
         
         
-        CashRegister cashRegister = new CashRegister();
+        CashRegister cashRegister = AbstractFactory.getCashRegisterInstance();
         
         //Customer ID's: CBAS1234, JCKA8604, PREM2503
         cashRegister.startSale("PREM2503");
