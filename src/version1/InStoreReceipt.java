@@ -93,7 +93,7 @@ public class InStoreReceipt implements Receipt{
         System.out.println(totalWithDiscountAndTax);
         System.out.println("---------------------------------------------------");
         System.out.println("Thank you for shopping at Target!");
-        System.out.println(DateUtilities.dateToDateTimeStandardAsString(d));
+        System.out.println(DateUtilities.dateToDateWithStandardTimeAsString(d));
     }
 
     /**
